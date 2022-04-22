@@ -1,24 +1,22 @@
-# README
+# Rails helpers and const
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Inspecting strings `config/initializers/colorize.rb`
+```
+my_str.colorize "my_search"
+my_str.colorize "my_search", only: true
+```
 
-Things you may want to cover:
+Inspecting long json
 
-* Ruby version
+```
+my_hash = { "a" => { b: "2" } }
+JSON.pretty_generate my_hash
+```
 
-* System dependencies
+You can use colorize and add_keys
+```
+JSON.pretty_generate Const.add_keys(my_hash)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# use colorize to see only matched lines
+JSON.pretty_generate(Const.add_keys(my_hash)).colorize "my_search", only: true
+```
