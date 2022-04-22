@@ -1,4 +1,4 @@
-
+# https://github.com/duleorlovic/rails_helpers_and_const/blob/main/config/initializers/colorize.rb
 class String
   COLOR = 31 # red
 
