@@ -1,0 +1,7 @@
+<h1>Pages#index</h1>
+
+<%= form_with model: @registration_form, url: registrations_path do |f| %>
+  <%= f.text_field :email %>
+  <%= f.password_field :password %>
+  <%= f.submit "Register" %>
+<% end %>
