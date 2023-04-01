@@ -5,10 +5,13 @@ class RegistrationForm
   # note that :_set_user is called when `valid?` is called
   # include ActiveModel::Validations::Callbacks
 
-  FIELDS = %i[email password]
+  FIELDS = %i[email password].freeze
   attr_accessor :user, *FIELDS
 
-  validates *FIELDS, presence: true
+  # Serialize inputs using https://stackoverflow.com/a/8940255/287166
+  # casting_attr_accessor *FIELDS, Float
+
+  validates(*FIELDS, presence: true)
 
   # if you need to customize prepopulate fields
   def initialize(attributes = {})

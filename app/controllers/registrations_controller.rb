@@ -9,6 +9,8 @@ class RegistrationsController < ApplicationController
   end
 
   def _registration_form_params
+    # if you use GET and params might not exists yet, you can use
+    # params.fetch(:registration_form, {}).permit(
     params.require(:registration_form).permit(
       *RegistrationForm::FIELDS,
     )

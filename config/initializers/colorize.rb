@@ -23,20 +23,14 @@ class String
   def colorize(string, only: false, return_nil_for_test: true)
     last_index = 0
     res = ''
-    while (new_index = self[last_index..-1].index(string))
-      if last_index + new_index - 1 > -1
-        res += self[last_index..last_index + new_index - 1]
-      end
+    while (new_index = self[last_index..].index(string))
+      res += self[last_index..last_index + new_index - 1] if last_index + new_index - 1 > -1
       res += string.red
       last_index = last_index + new_index + string.length
     end
-    res += self[last_index..-1]
-    if only
-      res = res.split("\n").select { |l| l.index string }.join("\n")
-    end
-    # rubocop:disable Rails/Output
+    res += self[last_index..]
+    res = res.split("\n").select { |l| l.index string }.join("\n") if only
     puts res
-    # rubocop:enable Rails/Output
     return_nil_for_test ? nil : res
   end
 end
