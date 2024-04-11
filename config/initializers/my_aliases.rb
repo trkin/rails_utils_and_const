@@ -3,6 +3,7 @@
 #   rails c
 #   me # => User
 #
+# Similar to config/initializers/console_helpers.rb
 # To ignore in all your projects you can use
 # ~/.gitconfig
 # [core]

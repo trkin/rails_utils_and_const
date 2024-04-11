@@ -1,4 +1,4 @@
-# https://github.com/duleorlovic/rails_helpers_and_const/blob/main/config/initializers/const.rb
+# https://github.com/duleorlovic/rails_utils_and_const/blob/main/config/initializers/const.rb
 
 if Rails.env.development?
   # For Rails::Server::Options.new.parse!(ARGV)[:Port] to work in c and sidekiq

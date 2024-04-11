@@ -1,4 +1,4 @@
-# https://github.com/duleorlovic/rails_helpers_and_const/blob/main/config/initializers/result_and_error.rb
+# https://github.com/duleorlovic/rails_utils_and_const/blob/main/config/initializers/result_and_error.rb
 class Result
   attr_accessor :message, :data
 

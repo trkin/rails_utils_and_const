@@ -1,4 +1,4 @@
-# https://github.com/duleorlovic/rails_helpers_and_const/blob/main/app/forms/registration_form.rb
+# https://github.com/duleorlovic/rails_utils_and_const/blob/main/app/forms/registration_form.rb
 class RegistrationForm
   include ActiveModel::Model
   # uncomment if you use before_validation :_set_user callbacks

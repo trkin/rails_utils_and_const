@@ -9,7 +9,7 @@ Code is stored in github repository
 Install utils with copy paste interesting code or using cli
 
 ```
-curl 
+curl https://raw.githubusercontent.com/trkin/rails_utils_and_const/main/lib/lib_utils.rb > lib/lib_utils.rb
 ```
 
 and than load in your rails configuration
@@ -20,6 +20,10 @@ and than load in your rails configuration
 
 
 ## Tips
+
+* Const
+
+  TODO: `bundle exec rake active_record_doctor` should work
 
 * Rails enums
 
@@ -33,7 +37,11 @@ and than load in your rails configuration
   ```
   my_str.colorize "my_search"
   my_str.colorize "my_search", only: true
+
+  # in test
+  assert_match /m_first.*m_second.*m_third/m, response.body, response.body.colorize("m_", only: true)
   ```
+  TODO: lines: 2
 
 * Helpers `config/initializers/helpers.rb`
   ```
@@ -44,7 +52,8 @@ and than load in your rails configuration
   JSON.pretty_generate(Helpers.hash_add_keys(my_hash)).colorize "my_search", only: true
 
   ```
-* Helpers for console aliases `config/initializers/my_aliases.rb`
+* Helpers for console aliases `config/initializers/my_aliases.rb` and
+  `config/initializers/console_helpers.rb`
   ```
   rails c
   me
