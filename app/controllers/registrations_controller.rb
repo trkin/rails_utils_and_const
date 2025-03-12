@@ -1,4 +1,8 @@
 class RegistrationsController < ApplicationController
+  def show
+    @registration_form = RegistrationForm.new _registration_form_params
+  end
+
   def create
     @registration_form = RegistrationForm.new _registration_form_params
     if @registration_form.save
@@ -9,10 +13,11 @@ class RegistrationsController < ApplicationController
   end
 
   def _registration_form_params
-    # if you use GET and params might not exists yet, you can use
-    # params.fetch(:registration_form, {}).permit(
-    params.require(:registration_form).permit(
+    # on GET we do not have params so we use {}, we need for .merge
+    params.fetch(:registration_form, {}).permit(
       *RegistrationForm::FIELDS,
+    ).merge(
+      user: current_user,
     )
   end
 end

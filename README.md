@@ -43,16 +43,16 @@ and than load in your rails configuration
   ```
   TODO: lines: 2
 
-* Helpers `config/initializers/helpers.rb`
+* LibUtils `lib/lib_utils.rb`
   ```
   my_hash = { a: { b: 1 } }
-  Helpers.hash_add_keys my_hash
+  LibUtils.hash_add_keys my_hash
     {"a"=>{"a b"=>1}}
 
-  JSON.pretty_generate(Helpers.hash_add_keys(my_hash)).colorize "my_search", only: true
+  JSON.pretty_generate(LibUtils.hash_add_keys(my_hash)).colorize "my_search", only: true
 
   ```
-* Helpers for console aliases `config/initializers/my_aliases.rb` and
+* LibUtils for console aliases `config/initializers/my_aliases.rb` and
   `config/initializers/console_helpers.rb`
   ```
   rails c
@@ -71,3 +71,18 @@ and than load in your rails configuration
 * Forms `app/forms/registration_form.rb`
 
 * Date Time formats `config/initializers/date_time_formats.rb`
+
+* Silent SQL log `config/initializers/silent_sql_log.rb`
+  ```
+  SILENT_SQL_LOG=true rails s
+
+  # also works for test
+  export SILENT_SQL_LOG=true
+  rails test
+  ```
+  If you really need you can
+  enable action cable log `config/initializers/enable_action_cable_log.rb`
+  enable active storage log `config/initializers/enable_active_storage_log.rb`
+  ```
+  ENABLE_ACTION_CABLE_LOG=true ENABLE_ACTIVE_STORAGE_LOG=true rails s
+  ```

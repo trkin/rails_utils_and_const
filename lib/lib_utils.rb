@@ -13,6 +13,9 @@ module LibUtils
   end
 
   # Same as convert_array_to_hash but the input is list separated by new lines
+  # enum kind: split_and_convert_to_hash(<<~TEXT)
+  #   admin
+  # TEXT
   def self.split_and_convert_to_hash(string)
     convert_array_to_hash string.split("\n")
   end
